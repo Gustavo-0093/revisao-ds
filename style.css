@@ -1,0 +1,619 @@
+:root {
+    --cor-fundo: #080d1c;
+    --cor-fundo-secundaria: #111a32;
+    --cor-card: #151f3a;
+    --cor-card-hover: #1b2748;
+    --cor-texto: #ffffff;
+    --cor-texto-secundario: #aeb9d5;
+    --cor-primaria: #ff9d00;
+    --cor-primaria-hover: #ffb52e;
+    --cor-borda: #273454;
+    --cor-sucesso: #38d996;
+    --sombra: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    transition: 0.3s;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    width: 100%;
+    padding: 22px 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--cor-borda);
+
+    position: sticky;
+    top: 0;
+
+    background: rgba(8, 13, 28, 0.95);
+    backdrop-filter: blur(10px);
+
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: var(--cor-primaria);
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a,
+footer a {
+    color: var(--cor-texto-secundario);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover,
+footer a:hover {
+    color: var(--cor-primaria);
+}
+
+#temaBtn {
+    border: 1px solid var(--cor-borda);
+    background: var(--cor-card);
+    color: var(--cor-texto);
+    padding: 9px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#temaBtn:hover {
+    border-color: var(--cor-primaria);
+    color: var(--cor-primaria);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 650px;
+    padding: 80px 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.hero-text {
+    max-width: 650px;
+}
+
+.tag {
+    display: inline-block;
+
+    color: var(--cor-primaria);
+
+    font-size: 13px;
+    font-weight: bold;
+
+    border: 1px solid var(--cor-primaria);
+
+    padding: 7px 12px;
+    border-radius: 20px;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--cor-primaria);
+}
+
+.hero p {
+    color: var(--cor-texto-secundario);
+    font-size: 19px;
+    max-width: 570px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+
+    border: none;
+    border-radius: 8px;
+
+    padding: 13px 23px;
+
+    background: var(--cor-primaria);
+    color: #111;
+
+    font-weight: bold;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: var(--cor-primaria-hover);
+    transform: translateY(-2px);
+}
+
+.hero-card {
+    width: 330px;
+    min-height: 330px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background: var(--cor-card);
+
+    border: 1px solid var(--cor-borda);
+    border-radius: 20px;
+
+    box-shadow: var(--sombra);
+}
+
+.bike-icon {
+    font-size: 90px;
+    margin-bottom: 20px;
+}
+
+.hero-card h3 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.hero-card p {
+    margin: 0;
+    font-size: 15px;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    padding: 90px 7%;
+}
+
+.section-title {
+    margin-bottom: 45px;
+}
+
+.section-title > span {
+    display: inline-block;
+
+    color: var(--cor-primaria);
+
+    border: 1px solid var(--cor-primaria);
+
+    border-radius: 6px;
+
+    padding: 3px 8px;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    margin-bottom: 12px;
+}
+
+.section-title h2 {
+    font-size: 40px;
+    margin-bottom: 8px;
+}
+
+.section-title p {
+    color: var(--cor-texto-secundario);
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    position: relative;
+
+    padding: 32px;
+
+    background: var(--cor-card);
+
+    border: 1px solid var(--cor-borda);
+
+    border-radius: 15px;
+
+    transition:
+        transform 0.3s,
+        background 0.3s,
+        border-color 0.3s;
+
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    background: var(--cor-card-hover);
+    border-color: var(--cor-primaria);
+}
+
+.card.destaque {
+    border-color: var(--cor-primaria);
+}
+
+.card-number {
+    color: var(--cor-primaria);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.card h3 {
+    font-size: 27px;
+    margin: 25px 0 10px;
+}
+
+.card p {
+    color: var(--cor-texto-secundario);
+    min-height: 80px;
+}
+
+.price {
+    margin-top: 25px;
+}
+
+.price strong {
+    font-size: 34px;
+}
+
+.price span {
+    color: var(--cor-texto-secundario);
+}
+
+.desconto {
+    margin-top: 25px;
+    color: var(--cor-texto-secundario);
+}
+
+.desconto strong {
+    color: var(--cor-primaria);
+}
+
+
+/* =========================
+   SIMULADOR
+========================= */
+
+.simulator {
+    background: var(--cor-fundo-secundaria);
+}
+
+.simulator-box,
+.reservation-box {
+    max-width: 900px;
+
+    padding: 35px;
+
+    background: var(--cor-card);
+
+    border: 1px solid var(--cor-borda);
+
+    border-radius: 15px;
+
+    box-shadow: var(--sombra);
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+
+    padding: 14px;
+
+    border-radius: 8px;
+
+    border: 1px solid var(--cor-borda);
+
+    background: var(--cor-fundo);
+
+    color: var(--cor-texto);
+
+    outline: none;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: var(--cor-primaria);
+}
+
+.resultado {
+    margin-top: 25px;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    background: var(--cor-fundo);
+
+    border: 1px solid var(--cor-borda);
+
+    color: var(--cor-texto-secundario);
+
+    font-size: 17px;
+}
+
+.resultado strong {
+    color: var(--cor-primaria);
+    font-size: 25px;
+}
+
+
+/* =========================
+   RESERVAS
+========================= */
+
+.reservation-form {
+    display: flex;
+    align-items: end;
+    gap: 15px;
+}
+
+.reservation-form .input-group {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.reservation-header {
+    margin-top: 35px;
+
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid var(--cor-borda);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reservation-header h3 {
+    font-size: 20px;
+}
+
+#contador {
+    color: var(--cor-primaria);
+    font-size: 14px;
+}
+
+#listaReservas {
+    list-style: none;
+    margin-top: 10px;
+}
+
+#listaReservas li {
+    padding: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid var(--cor-borda);
+
+    color: var(--cor-texto-secundario);
+}
+
+.btn-remover {
+    border: none;
+
+    background: transparent;
+
+    color: #ff5b5b;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+.btn-remover:hover {
+    color: #ff8585;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 60px 7%;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px;
+
+    border-top: 1px solid var(--cor-borda);
+
+    background: var(--cor-fundo);
+}
+
+footer h3,
+footer h4 {
+    margin-bottom: 12px;
+}
+
+footer p {
+    color: var(--cor-texto-secundario);
+}
+
+footer a {
+    display: block;
+    margin-bottom: 7px;
+}
+
+
+/* =========================
+   TEMA CLARO
+========================= */
+
+body.dark {
+    --cor-fundo: #f4f6fb;
+    --cor-fundo-secundaria: #e9edf7;
+    --cor-card: #ffffff;
+    --cor-card-hover: #f8f9fd;
+    --cor-texto: #111827;
+    --cor-texto-secundario: #596579;
+    --cor-borda: #d9dfeb;
+    --cor-primaria: #e68a00;
+    --cor-primaria-hover: #f39a00;
+    --sombra: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+body.dark header {
+    background: rgba(244, 246, 251, 0.95);
+}
+
+body.dark .btn {
+    color: #ffffff;
+}
+
+body.dark .resultado {
+    background: #f4f6fb;
+}
+
+body.dark .input-group input,
+body.dark .input-group select {
+    background: #ffffff;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 18px 5%;
+
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    nav {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 15px;
+
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: 60px 5%;
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-card {
+        width: 100%;
+        max-width: 330px;
+    }
+
+    .section {
+        padding: 65px 5%;
+    }
+
+    .section-title h2 {
+        font-size: 32px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .simulator-box,
+    .reservation-box {
+        padding: 25px;
+    }
+
+    .reservation-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    footer {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 45px 5%;
+    }
+}

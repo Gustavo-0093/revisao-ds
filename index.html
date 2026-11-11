@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoBike SP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            EcoBike <span>SP</span>
+        </div>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#planos">Planos</a>
+            <a href="#simulador">Simulador</a>
+            <a href="#reservas">Reservas</a>
+        </nav>
+
+        <button id="temaBtn" onclick="alternarTema()">Modo escuro</button>
+    </header>
+
+
+    <main>
+
+        <!-- HERO -->
+        <section id="inicio" class="hero">
+
+            <div class="hero-text">
+                <span class="tag">MOBILIDADE SUSTENTÁVEL</span>
+
+                <h1>
+                    Pedale por São Paulo
+                    <span>de um jeito diferente.</span>
+                </h1>
+
+                <p>
+                    Alugue bicicletas urbanas, elétricas e de cargo
+                    de forma rápida, simples e sustentável.
+                </p>
+
+                <a href="#planos" class="btn">
+                    Ver planos
+                </a>
+            </div>
+
+            <div class="hero-card">
+                <div class="bike-icon">🚲</div>
+                <h3>EcoBike SP</h3>
+                <p>Pedale. Economize. Respire.</p>
+            </div>
+
+        </section>
+
+
+        <!-- PLANOS -->
+        <section id="planos" class="section">
+
+            <div class="section-title">
+                <span>01</span>
+                <h2>Nossos planos</h2>
+                <p>
+                    Escolha a bicicleta ideal para o seu trajeto.
+                </p>
+            </div>
+
+            <div class="cards">
+
+                <article class="card">
+                    <span class="card-number">01</span>
+
+                    <h3>Urbana</h3>
+
+                    <p>
+                        Perfeita para trajetos curtos e passeios
+                        pela cidade.
+                    </p>
+
+                    <div class="price">
+                        <strong>R$ 12</strong>
+                        <span>/ hora</span>
+                    </div>
+                </article>
+
+
+                <article class="card destaque">
+                    <span class="card-number">02</span>
+
+                    <h3>Elétrica</h3>
+
+                    <p>
+                        Mais potência para percorrer distâncias
+                        maiores com menos esforço.
+                    </p>
+
+                    <div class="price">
+                        <strong>R$ 20</strong>
+                        <span>/ hora</span>
+                    </div>
+                </article>
+
+
+                <article class="card">
+                    <span class="card-number">03</span>
+
+                    <h3>Cargo</h3>
+
+                    <p>
+                        Mais espaço para transportar compras,
+                        objetos e cargas.
+                    </p>
+
+                    <div class="price">
+                        <strong>R$ 25</strong>
+                        <span>/ hora</span>
+                    </div>
+                </article>
+
+            </div>
+
+            <p class="desconto">
+                Acima de 5 horas você ganha <strong>10% de desconto.</strong>
+            </p>
+
+        </section>
+
+
+        <!-- SIMULADOR -->
+        <section id="simulador" class="section simulator">
+
+            <div class="section-title">
+                <span>02</span>
+                <h2>Simulador de preço</h2>
+                <p>
+                    Descubra quanto você vai pagar pelo aluguel.
+                </p>
+            </div>
+
+
+            <div class="simulator-box">
+
+                <div class="input-group">
+                    <label for="horas">Quantidade de horas</label>
+
+                    <input
+                        type="number"
+                        id="horas"
+                        min="1"
+                        placeholder="Ex: 6"
+                    >
+                </div>
+
+
+                <div class="input-group">
+                    <label for="tipo">Tipo de bicicleta</label>
+
+                    <select id="tipo">
+                        <option value="urbana">Urbana — R$ 12/h</option>
+                        <option value="eletrica">Elétrica — R$ 20/h</option>
+                        <option value="cargo">Cargo — R$ 25/h</option>
+                    </select>
+                </div>
+
+
+                <button class="btn" onclick="mostrarResultado()">
+                    Calcular
+                </button>
+
+
+                <div id="resultado" class="resultado">
+                    Preencha os dados para calcular.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESERVAS -->
+        <section id="reservas" class="section">
+
+            <div class="section-title">
+                <span>03</span>
+                <h2>Pré-reservas</h2>
+                <p>
+                    Coloque seu nome na lista e garanta sua intenção de reserva.
+                </p>
+            </div>
+
+
+            <div class="reservation-box">
+
+                <div class="reservation-form">
+
+                    <div class="input-group">
+                        <label for="nome">Seu nome</label>
+
+                        <input
+                            type="text"
+                            id="nome"
+                            placeholder="Digite seu nome"
+                        >
+                    </div>
+
+                    <button class="btn" onclick="adicionarReserva()">
+                        Adicionar
+                    </button>
+
+                </div>
+
+
+                <div class="reservation-header">
+                    <h3>Lista de reservas</h3>
+
+                    <span id="contador">
+                        0 reservas
+                    </span>
+                </div>
+
+
+                <ul id="listaReservas"></ul>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div>
+            <h3>EcoBike SP</h3>
+
+            <p>
+                Mobilidade urbana simples,
+                sustentável e acessível.
+            </p>
+        </div>
+
+
+        <div>
+            <h4>Contato</h4>
+
+            <p>
+                contato@ecobikesp.com.br
+            </p>
+
+            <p>
+                São Paulo - SP
+            </p>
+        </div>
+
+
+        <div>
+            <h4>Navegação</h4>
+
+            <a href="#inicio">Início</a>
+            <a href="#planos">Planos</a>
+            <a href="#simulador">Simulador</a>
+            <a href="#reservas">Reservas</a>
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html> 
